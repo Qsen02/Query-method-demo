@@ -22,6 +22,7 @@ function routerConfig(app) {
 		}
 		const query = req.body;
 		const notes = await searchNotes(query.criteria, query.value);
+		console.log("Search results:", notes);
 		res.json(notes);
 	});
 }

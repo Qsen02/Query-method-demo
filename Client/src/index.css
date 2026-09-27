@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Ariel, Helvetica, sans-serif;
+}
+
+main {
+	padding:30px;
+	width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
