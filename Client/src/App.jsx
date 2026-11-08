@@ -38,13 +38,13 @@ function App() {
 
 	return (
 		<main>
-			<section>
+			<section className="title-section">
 				<h1>Welcome to http method Query demo</h1>
 				<p>This is simple app for notes to test new http methods</p>
 			</section>
-			<form>
+			<form className="form-section">
 				<h2>Search notes</h2>
-				<div>
+				<div className="inputs">
 					<input
 						id="value"
 						type="text"
@@ -65,9 +65,9 @@ function App() {
 					</button>
 				</div>
 			</form>
-			<section>
+			<section className="notes-section">
 				<h2>Notes</h2>
-				<section>
+				<section className="notes-container">
 					{notes.map((note) => (
 						<NoteItem
 							key={note._id}

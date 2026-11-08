@@ -8,16 +8,252 @@
 }
 
 main {
-	padding:30px;
+	padding: 30px;
 	width: 100vw;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 30px;
+	background-color: rgb(80, 80, 80);
 }
 
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+.title-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	text-align: center;
+	color: white;
+}
+.title-section h1 {
+	font-size: 30pt;
+}
+.title-section p {
+	font-size: 16pt;
+}
+.form-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	text-align: center;
+	color: white;
+	width: 100%;
+}
+
+.form-section .inputs {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+}
+
+.form-section .inputs input {
+	font-size: 14pt;
+	border-radius: 10px;
+	background-color: rgb(180, 180, 180);
+	border: none;
+	color: white;
+	padding-left: 10px;
+	width: 300px;
+	height: 30px;
+}
+.form-section .inputs input::placeholder {
+	color: white;
+	font-size: 14pt;
+}
+
+.form-section .inputs select {
+	font-size: 14pt;
+	border-radius: 10px;
+	background-color: rgb(180, 180, 180);
+	border: none;
+	color: white;
+	padding-left: 10px;
+	width: 100px;
+	height: 30px;
+}
+.form-section .inputs select::placeholder {
+	color: white;
+	font-size: 14pt;
+}
+
+.form-section .inputs button {
+	padding: 0 10px 0 10px;
+	border-radius: 10px;
+	background-color: rgb(0, 179, 255);
+	color: white;
+	transition: all 0.7s ease-in-out;
+	font-size: 14pt;
+	cursor: pointer;
+	border: none;
+	font-weight: bold;
+}
+
+.form-section .inputs button:hover {
+	background-color: rgb(0, 137, 216);
+}
+
+.notes-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	text-align: center;
+	color: white;
+	width: 100%;
+}
+
+.notes-section h2 {
+	font-size: 26pt;
+}
+
+.notes-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	width: 70%;
+}
+
+.note-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	text-align: center;
+	color: white;
+	width: 100%;
+	background-color: rgb(120, 120, 120);
+	border-radius: 20px;
+	padding: 10px 0 10px 0;
+	word-wrap: break-word;
+	width: 70%;
+}
+
+.note-item h3 {
+	font-size: 20pt;
+}
+.note-item p {
+	font-size: 16pt;
+	width: 90%;
+}
+
+@media(max-width:1300px){
+	.title-section h1 {
+		font-size: 26pt;
+	}
+	.title-section p {
+		font-size: 14pt;
+	}
+	
+	.form-section .inputs input {
+		font-size: 12pt;
+		width: 250px;
+		height: 30px;
+	}
+	.form-section .inputs input::placeholder {
+		color: white;
+		font-size: 12pt;
+	}
+	
+	.form-section .inputs select {
+		font-size: 12pt;
+		width: 80px;
+		height: 30px;
+	}
+	.form-section .inputs select::placeholder {
+		color: white;
+		font-size: 12pt;
+	}
+	
+	.form-section .inputs button {
+		font-size: 12pt;
+	}
+	
+	.notes-section h2 {
+		font-size: 22pt;
+	}
+	
+	.notes-container {
+		width: 90%;
+	}
+	
+	.note-item {
+		width: 100%;
+	}
+	
+	.note-item h3 {
+		font-size: 18pt;
+	}
+	.note-item p {
+		font-size: 14pt;
+		width: 90%;
+	}
+}
+
+@media(max-width:700px){
+	.title-section h1 {
+		font-size: 22pt;
+	}
+	.title-section p {
+		font-size: 12pt;
+	}
+	
+	.form-section .inputs input {
+		font-size: 10pt;
+		width: 200px;
+		height: 20px;
+	}
+	.form-section .inputs input::placeholder {
+		color: white;
+		font-size: 10pt;
+	}
+	
+	.form-section .inputs select {
+		font-size: 10pt;
+		width: 60px;
+		height: 20px;
+	}
+	.form-section .inputs select::placeholder {
+		color: white;
+		font-size: 10pt;
+	}
+	
+	.form-section .inputs button {
+		font-size: 10pt;
+	}
+	
+	.notes-section h2 {
+		font-size: 18pt;
+	}
+	
+	.notes-container {
+		width: 95%;
+	}
+	
+	.note-item {
+		width: 100%;
+	}
+	
+	.note-item h3 {
+		font-size: 16pt;
+	}
+	.note-item p {
+		font-size: 12pt;
+		width: 90%;
+	}
+}
+
+@media(max-width:360px){
+	.form-section .inputs{
+		flex-direction: column;
+		align-items: center;
+	}
 }
