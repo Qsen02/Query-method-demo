@@ -9,7 +9,6 @@
 
 main {
 	padding: 30px;
-	width: 100vw;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -230,7 +229,7 @@ a {
 	}
 	.form-section .inputs textarea {
 		font-size: 12pt;
-		width: 2000px;
+		width: 200px;
 		height: 60px;
 	}
 	.form-section .inputs input::placeholder, .form-section .inputs textarea::placeholder {

@@ -35,25 +35,25 @@ export default function CreateNoteForm({ notesHandler }) {
     }
 
     return (
-		<form className="form-section">
+		<form className={styles.form}>
 			<h2>Create Note</h2>
-            <div className="inputs">
-                <label htmlFor="title">Title</label>
+			<div className={styles.inputs}>
+				<label htmlFor="title">Title</label>
 				<input
 					type="text"
 					name="title"
 					value={formValues.title}
 					onChange={changeFormValues}
 				/>
-            </div>
-            <div className="inputs">
-                <label htmlFor="content">Content</label>
+			</div>
+			<div className={styles.inputs}>
+				<label htmlFor="content">Content</label>
 				<textarea
 					name="content"
 					value={formValues.content}
 					onChange={changeFormValues}
 				/>
-            </div>
+			</div>
 			<button type="submit" className="button" onClick={submitForm}>
 				Create
 			</button>
