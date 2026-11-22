@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import NoteItem from "./components/NoteItem";
+import CreateNoteForm from "./components/CreateNote";
 
 function App() {
 	const [notes, setNotes] = useState([]);
@@ -7,12 +8,13 @@ function App() {
 		value: "",
 		criteria: "title",
 	});
+	const [showCreateForm, setShowCreateForm] = useState(false);
 
 	function handleSearch(event) {
 		const { name, value } = event.currentTarget;
 		setSearchValue((prev) => ({
 			...prev,
-			[name]: value
+			[name]: value,
 		}));
 	}
 
@@ -22,18 +24,21 @@ function App() {
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({ criteria: searchValue.criteria, value: searchValue.value }),
+			body: JSON.stringify({
+				criteria: searchValue.criteria,
+				value: searchValue.value,
+			}),
 		});
 		const data = await response.json();
 		setNotes(data);
 	}
 
 	useEffect(() => {
-		(async () => { 
-			const response = await fetch('http://localhost:3000/notes');
+		(async () => {
+			const response = await fetch("http://localhost:3000/notes");
 			const data = await response.json();
 			setNotes(data);
-		})()
+		})();
 	}, []);
 
 	return (
@@ -42,6 +47,24 @@ function App() {
 				<h1>Welcome to http method Query demo</h1>
 				<p>This is simple app for notes to test new http methods</p>
 			</section>
+			{showCreateForm ? (
+				<button
+					className="button"
+					type="button"
+					onClick={() => setShowCreateForm(false)}
+				>
+					Hide Create Note Form
+				</button>
+			) : (
+				<button
+					className="button"
+					type="button"
+					onClick={() => setShowCreateForm(true)}
+				>
+					Show Create Note Form
+				</button>
+			)}
+			{showCreateForm && <CreateNoteForm notesHandler={setNotes} />}
 			<form className="form-section">
 				<h2>Search notes</h2>
 				<div className="inputs">
@@ -60,7 +83,7 @@ function App() {
 						<option value="title">Title</option>
 						<option value="content">Content</option>
 					</select>
-					<button type="button" onClick={onSearch}>
+					<button type="button" onClick={onSearch} className="button">
 						Search
 					</button>
 				</div>
